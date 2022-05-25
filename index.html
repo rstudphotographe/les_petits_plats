@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/Les_petits_plats_P7/css/normalize.css">
+    <link rel="stylesheet" href="/Les_petits_plats_P7/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/171a50d46a.js" crossorigin="anonymous"></script>
+    <title>Les petits plats</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="/Les_petits_plats_P7/assets/logo.png" alt="">
+    </header>
+    <main class="search">
+        <div >
+            <input class="search_bar" type="text" placeholder="Rechercher une recette"  aria-label="rechercher un ingredient, appareil, ustensiles ou une recette">
+            <i class="fas fa-search icon_search" aria-haspopup="true"></i>
+            <div class="container_tag">
+
+            </div>
+        </div>    
+    </main>
+    <article>
+        <span class="btn_ingredient btn_result">coco <img class="close" src="/Les_petits_plats_P7/assets/Vector.png" alt=""></span>
+        <span class="btn_appareil btn_result">batteur <img class="close" src="/Les_petits_plats_P7/assets/Vector.png" alt=""></span>
+        <span class="btn_ustensil btn_result">fourchette <img class="close" src="/Les_petits_plats_P7/assets/Vector.png" alt=""></span>
+    </article>
+    <section class="container_onglet">
+        <div class="onglet">
+            <label for="" class="ingredient">Ingredients
+                <i class="fa-solid fa-angle-down fleche_haut"></i>
+            </label>
+            <input
+                placeholder="Rechercher un ingredient"
+                class="search" 
+                type="text">
+            <ul></ul>
+        </div>
+        <div>
+            <label for="" class="appareil">Appareils
+                <i class="fa-solid fa-angle-down fleche_haut"></i>
+            </label>
+            <input
+                placeholder="Rechercher un appareil"
+                class="search" 
+                type="text">
+            <ul></ul>
+        </div>
+        <div>
+            <label for="" class="ustensil">Ustensiles
+                <i class="fa-solid fa-angle-down fleche_haut"></i>
+            </label>
+            <input
+                placeholder="Rechercher un ustensile"
+                class="search" 
+                type="text">
+            <ul></ul>
+        </div>    
+    </section>
+    <section id="container_recipe">
+        <!-- <div class="recipe">
+            <img src="/Les_petits_plats_P7/assets/pexels-daria-shevtsova-1070880.jpg" alt="">
+            <div class="info_recipe">
+                <p class="recipe_name">Limonade de Coco</p>
+                <div class="container_time">
+                    <i class="fa-regular fa-clock clock"></i> <span class="time">10 min </span>
+                </div>
+            </div>
+            <div class="liste_ingredient">
+                <div class="container_listing">                   
+                    <ul >
+                        <li class="listing"><span class="ingreds">Lait de coco:</span> 400ml</li>
+                        <li class="listing"><span class="ingreds">Jus de citron:</span>2</li>
+                        <li class="listing"><span class="ingreds">Creme de coco:</span>4 cuillères</li>
+                        <li class="listing"><span class="ingreds">Sucre:</span>20g</li>
+                        <li class="listing"><span class="ingreds">Glacon:</span>2</li>
+                    </ul>
+                </div>
+                <div class="container_consigne">     
+                    <p class="consigne">Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
+                </div>
+            </div>
+        </div> -->
+
+    </section>
+    <script type="" src="/Les_petits_plats_P7/script/index.js"></script>
+    
+</body>
+</html>
