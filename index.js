@@ -1,5 +1,3 @@
-//import { recipesArray } from "/Les_petits_plats_P7/script/recipes.js";
-
 
 //recuparation et affichage des tableaux infos
  function displayGalleryRecipe(recipe)  {
@@ -7,7 +5,7 @@
      console.log(recipe)
      dom.innerHTML = `
 <div class="recipe">
-            <img src="/Les_petits_plats_P7/assets/pexels-daria-shevtsova-1070880.jpg" alt="">
+            <img src="pexels-daria-shevtsova-1070880.jpg" alt="">
             <div class="info_recipe">
                 <p class="recipe_name">Limonade de Coco</p>
                 <div class="container_time">
