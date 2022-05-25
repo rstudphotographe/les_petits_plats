@@ -5,7 +5,7 @@
      console.log(recipe)
      dom.innerHTML = `
 <div class="recipe">
-            <img src="pexels-daria-shevtsova-1070880.jpg" alt="">
+            <img src="/assets/pexels-daria-shevtsova-1070880.jpg" alt="">
             <div class="info_recipe">
                 <p class="recipe_name">Limonade de Coco</p>
                 <div class="container_time">
