@@ -1,0 +1,171 @@
+body {
+
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+
+  
+
+  .logo{
+      position: relative;
+      width: 269px;
+      height: 93px;
+      left: 34%;
+      
+  }
+
+  .search_bar {
+      width: 100%;
+      background-color: #e7e7e7;
+      border-radius: 5px;
+      height: 50px;
+      font-size: 18px;
+  }
+  .icon_search {
+    position: absolute;
+    margin: -4% 78%;
+    font-size: 20px;
+    color: #aaa8a8;
+  }
+
+  article {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+  }
+.btn_result {
+  margin: 20px 0;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: flex;
+}
+  .btn_ingredient {
+    background-color: #3282F7;
+    color: white;
+  }
+
+  .btn_appareil {
+    background-color: #68D9A4;
+    color: white;
+  }
+
+  .btn_ustensil {
+    background-color: #ED6454;
+    color: white;
+  }
+
+  .close {
+    
+    margin: 0 10px;    
+    
+  }
+
+  .container_onglet {
+    margin: 67px 0px;
+    display: flex;
+  }
+
+  .ingredient {
+    height: 40px;
+    background-color: #3282F7;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    padding: 20px;
+}  
+
+.appareil {
+    height: 40px;
+    background-color:  #68D9A4;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    padding: 20px;
+    margin: 40px;
+} 
+
+.ustensil {
+    height: 40px;
+    background-color: #ED6454;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    padding: 20px;
+    
+} 
+
+//*****************************gallery**************************
+#container_recipe {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    //margin-left: 40px;
+    margin-top: 50px;
+    height: 850px;
+  }
+
+  img {
+      width: 100%;
+  }
+
+  .recipe {
+    background-color: aliceblue;
+    border-radius: 5px;
+    height: 450px;
+    background: #E7E7E7;
+    width: 380px;
+  }
+
+  //.recipe_name{
+    //margin: 5px -60px;
+  //}
+
+  .info_recipe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .liste_ingredient{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: max-content;
+  }
+  .container_listing {
+    list-style-type: none;
+    margin: 0px -25px;
+  }
+  li {
+    font-size: 12px;
+    
+  }
+  .clock{
+  
+    margin-left: 130px;
+    
+  }
+  .time {
+    font-size: 15px;
+
+  }
+
+  .listing {
+    font-size: 12px;
+    display: flex;
+  }
+  .ingreds{
+    font-weight: bold;
+  }
+
+.container_consigne {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  text-align: left;
+}
+.consigne {
+    font-size: 12px;  
+    width: 20%;
+    margin: 40px;
+  }
