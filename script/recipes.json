@@ -1,5 +1,5 @@
-
-const recipesArray = [
+{
+    "recipes" : [
     {
         "id": 1,
         "name" : "Limonade de Coco",
@@ -1725,3 +1725,4 @@ const recipesArray = [
         "ustensils":["rouleau à patisserie","fouet"]
     }
 ]
+}
