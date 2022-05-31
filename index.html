@@ -1,66 +1,84 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/171a50d46a.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/171a50d46a.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Les petits plats</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <img class="logo" src="/assets/logo.png" alt="">
+      <img class="logo" src="/assets/logo.png" alt="" />
     </header>
     <main class="search">
-        <div >
-            <input class="search_bar" type="text" placeholder="Rechercher une recette"  aria-label="rechercher un ingredient, appareil, ustensiles ou une recette">
-            <i class="fas fa-search icon_search" aria-haspopup="true"></i>
-            <div class="container_tag">
-
-            </div>
-        </div>    
+      <div>
+        <input
+          class="search_bar"
+          type="text"
+          placeholder="Rechercher une recette"
+          aria-label="rechercher un ingredient, appareil, ustensiles ou une recette"
+        />
+        <i class="fas fa-search icon_search" aria-haspopup="true"></i>
+        <div class="container_tag"></div>
+      </div>
     </main>
     <article>
-        <span class="btn_ingredient btn_result">cocos <img class="close" src="/assets/Vector.png" alt=""></span>
-        <span class="btn_appareil btn_result">batteur <img class="close" src="/assets/Vector.png" alt=""></span>
-        <span class="btn_ustensil btn_result">fourchette <img class="close" src="/assets/Vector.png" alt=""></span>
+      <span class="btn_ingredient btn_result"
+        >cocos <img class="close" src="/assets/Vector.png" alt=""
+      /></span>
+      <span class="btn_appareil btn_result"
+        >batteur <img class="close" src="/assets/Vector.png" alt=""
+      /></span>
+      <span class="btn_ustensil btn_result"
+        >fourchette <img class="close" src="/assets/Vector.png" alt=""
+      /></span>
     </article>
     <section class="container_onglet">
-        <div class="onglet">
-            <label for="" class="ingredient">Ingredients
-                <i class="fa-solid fa-angle-down fleche_haut"></i>
-            </label>
-            <input
-                placeholder="Rechercher un ingredient"
-                class="search" 
-                type="text">
-            <ul></ul>
-        </div>
-        <div>
-            <label for="" class="appareil">Appareils
-                <i class="fa-solid fa-angle-down fleche_haut"></i>
-            </label>
-            <input
-                placeholder="Rechercher un appareil"
-                class="search" 
-                type="text">
-            <ul></ul>
-        </div>
-        <div>
-            <label for="" class="ustensil">Ustensiles
-                <i class="fa-solid fa-angle-down fleche_haut"></i>
-            </label>
-            <input
-                placeholder="Rechercher un ustensile"
-                class="search" 
-                type="text">
-            <ul></ul>
-        </div>    
+      <div class="onglet">
+        <label for="" class="ingredient"
+          >Ingredients
+          <i class="fa-solid fa-angle-down fleche_haut"></i>
+        </label>
+        <input
+          placeholder="Rechercher un ingredient"
+          class="search"
+          type="text"
+        />
+        <ul></ul>
+      </div>
+      <div>
+        <label for="" class="appareil"
+          >Appareils
+          <i class="fa-solid fa-angle-down fleche_haut"></i>
+        </label>
+        <input
+          placeholder="Rechercher un appareil"
+          class="search"
+          type="text"
+        />
+        <ul></ul>
+      </div>
+      <div>
+        <label for="" class="ustensil"
+          >Ustensiles
+          <i class="fa-solid fa-angle-down fleche_haut"></i>
+        </label>
+        <input
+          placeholder="Rechercher un ustensile"
+          class="search"
+          type="text"
+        />
+        <ul></ul>
+      </div>
     </section>
     <section id="container_recipe">
-        <!-- <div class="recipe">
+      <!-- <div class="recipe">
             <img src="/Les_petits_plats_P7/assets/pexels-daria-shevtsova-1070880.jpg" alt="">
             <div class="info_recipe">
                 <p class="recipe_name">Limonade de Coco</p>
@@ -83,9 +101,8 @@
                 </div>
             </div>
         </div> -->
-
     </section>
-    
-    <script type="module" src="/script/index.js"></script>
-</body>
+    <script src="/script/recipes.js"></script>
+    <script type="" src="/script/index.js"></script>
+  </body>
 </html>
