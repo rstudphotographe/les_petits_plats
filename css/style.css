@@ -68,34 +68,115 @@ article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 .ingredient {
-  height: 40px;
+  height: 15px;
   background-color: #3282F7;
   border-radius: 5px;
   font-size: 18px;
-  color: white;
   padding: 20px;
+  margin: 15px;
+  width: 50%;
+}
+
+.ingredient:hover {
+  width: 550px;
+}
+
+.btn_ingredient_li {
+  display: none;
+}
+
+#menu_ingredient:hover .btn_ingredient_li {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  background-color: #3282F7;
+  color: white;
+  z-index: 1;
+  position: absolute;
+  margin: -20px 15px;
+  width: 550px;
+}
+
+.btn_appareil_li {
+  display: none;
+}
+
+#menu_appareil:hover .btn_appareil_li {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  background-color: #68D9A4;
+  color: white;
+  z-index: 1;
+  position: absolute;
+  margin: -20px 15px;
+  width: 550px;
+}
+
+.btn_ustensil_li {
+  display: none;
+}
+
+#menu_ustensil:hover .btn_ustensil_li {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  background-color: #ED6454;
+  color: white;
+  z-index: 1;
+  position: absolute;
+  margin: -20px 15px;
+  width: 550px;
+}
+
+.appareil:hover {
+  width: 550px;
+}
+
+.ustensil:hover {
+  width: 550px;
 }
 
 .appareil {
-  height: 40px;
+  height: 15px;
   background-color: #68D9A4;
   border-radius: 5px;
   font-size: 18px;
-  color: white;
   padding: 20px;
-  margin: 40px;
+  margin: 15px;
+  width: 50%;
 }
 
 .ustensil {
-  height: 40px;
+  height: 15px;
   background-color: #ED6454;
   border-radius: 5px;
   font-size: 18px;
-  color: white;
   padding: 20px;
+  margin: 15px;
+  width: 50%;
+}
+
+input {
+  border: none;
+}
+
+.fleche_haut {
+  margin: 35px -40px;
+  position: absolute;
+  color: white;
 }
 
 #container_recipe {
@@ -115,7 +196,7 @@ img {
 .recipe {
   background-color: aliceblue;
   border-radius: 5px;
-  height: 450px;
+  height: 490px;
   background: #E7E7E7;
   width: 380px;
 }
@@ -145,6 +226,7 @@ img {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  margin: 30px 0px;
 }
 
 .container_listing {

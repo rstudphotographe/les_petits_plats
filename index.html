@@ -32,49 +32,45 @@
       <span class="btn_ingredient btn_result"
         >cocos <img class="close" src="/assets/Vector.png" alt=""
       /></span>
-      <span class="btn_appareil btn_result"
+      <span  class="btn_appareil btn_result"
         >batteur <img class="close" src="/assets/Vector.png" alt=""
       /></span>
-      <span class="btn_ustensil btn_result"
+      <span  class="btn_ustensil btn_result"
         >fourchette <img class="close" src="/assets/Vector.png" alt=""
       /></span>
     </article>
     <section class="container_onglet">
-      <div class="onglet">
-        <label for="" class="ingredient"
-          >Ingredients
-          <i class="fa-solid fa-angle-down fleche_haut"></i>
-        </label>
-        <input
-          placeholder="Rechercher un ingredient"
-          class="search"
-          type="text"
+      <div id="menu_ingredient" class="onglet">
+        <input  
+        id="btningredient"
+        placeholder="ingredient"
+        class="search ingredient"
+        type="text"
         />
-        <ul></ul>
+        <i class="fa-solid fa-angle-down fleche_haut"></i>
+        <ul class="btn_ingredient_li"></ul>
       </div>
-      <div>
-        <label for="" class="appareil"
-          >Appareils
-          <i class="fa-solid fa-angle-down fleche_haut"></i>
-        </label>
+
+      <div id="menu_appareil" class="onglet">
         <input
-          placeholder="Rechercher un appareil"
-          class="search"
-          type="text"
+        id="btnappareil"
+        placeholder="Appareils"
+        class="search appareil"
+        type="text"
         />
-        <ul></ul>
+        <i class="fa-solid fa-angle-down fleche_haut"></i>
+        <ul class="btn_appareil_li"></ul>
       </div>
-      <div>
-        <label for="" class="ustensil"
-          >Ustensiles
-          <i class="fa-solid fa-angle-down fleche_haut"></i>
-        </label>
+      
+      <div id="menu_ustensil" class="onglet" >
         <input
-          placeholder="Rechercher un ustensile"
-          class="search"
-          type="text"
+        id="btnustensil" for="" class="ustensil"
+        placeholder="Ustensile"
+        class="search"
+        type="text"
         />
-        <ul></ul>
+        <i class="fa-solid fa-angle-down fleche_haut"></i>
+        <ul class="btn_ustensil_li"></ul>
       </div>
     </section>
     <section id="container_recipe">
@@ -104,5 +100,6 @@
     </section>
     <script src="/script/recipes.js"></script>
     <script type="" src="/script/index.js"></script>
+    <script src="/script/filterRecipes.js"></script>
   </body>
 </html>

@@ -2,12 +2,9 @@
 
 function displayGalleryRecipe(recipe) {
   //console.log(recipe.ingredients);
-  let contentHtml = document
-    .getElementById("container_recipe")
-    .insertAdjacentHTML(
+  let contentHtml = document.getElementById("container_recipe").insertAdjacentHTML(
       "afterbegin",
-      `
-        <div class="recipe">
+      `   <div class="recipe">
             <img src="/assets/pexels-daria-shevtsova-1070880.jpg" alt="">
             <div class="info_recipe">
                 <p class="recipe_name">${recipe.name}</p>
@@ -82,10 +79,13 @@ function displayGalleryRecipe(recipe) {
             `<li>${ingredient.ingredient}</li>`
             );
         }
-    }
+    };
+    
     
     recipe.ingredients.map((ingredient) => createListIngredient(ingredient));
 }
+
+
 // FONCTION PRINCIPALE INIT QUI LANCE LES TACHES A EFFECTUER pour fabriquer la page
 async function init() {
     galleryBuilder(recipes);
