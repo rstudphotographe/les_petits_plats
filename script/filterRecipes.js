@@ -54,7 +54,7 @@ ustensilsArray.forEach((ustensil) => displayUstensil(ustensil));
 displayUstensil();
 
 
-//-------------------Algo de recherche bar de recherche-----------------//////////// 
+//-------------------Algo1 de recherche bar de recherche-----------------//////////// 
 const searchBar = document.querySelector('.search_bar');
 
 searchBar.addEventListener("keyup", (e) => {
@@ -75,3 +75,5 @@ function filterElements(lettres, recipesCard) {
     }
   }
 };
+
+//----------------------------------------Algo 2 pour la barre de recherche---------------------//
