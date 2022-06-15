@@ -169,6 +169,10 @@ article {
   width: 50%;
 }
 
+.li_tag {
+  font-size: 16px;
+}
+
 input {
   border: none;
 }
@@ -193,7 +197,7 @@ img {
   width: 100%;
 }
 
-.recipe {
+.card_recipe {
   background-color: aliceblue;
   border-radius: 5px;
   height: 490px;

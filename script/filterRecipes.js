@@ -17,7 +17,7 @@ function ingredientsListArray() {
 ingredientsListArray();
 
 function displayIngredient(ingredients){
-  liIngredient.insertAdjacentHTML("beforeend",`<li>${ingredients}</li>`);
+  liIngredient.insertAdjacentHTML("beforeend",`<li class="li_tag">${ingredients}</li>`);
 }
   ingredientsArray.forEach((ingredient) => displayIngredient(ingredient));
   displayIngredient()
@@ -32,13 +32,13 @@ function appareilsListArray() {
 appareilsListArray();
 
 function displayAppareil (appliance) {
-  liAppareils.insertAdjacentHTML("beforeend", `<li>${appliance}</li>`);
+  liAppareils.insertAdjacentHTML("beforeend", `<li class="li_tag">${appliance}</li>`);
 }
 appareilsArray.forEach((appliance) => displayAppareil(appliance));
 displayAppareil()
 
 
-//De meme pour les USTENSILS//----------------------------//
+//-------------------------------De meme pour les USTENSILS//----------------------------//
 function ustensilsListArray () {
   ustensilsArray = [];
   ustensilsArray = recipes.map((recipe) => recipe.ustensils).flat();
@@ -48,7 +48,30 @@ function ustensilsListArray () {
 ustensilsListArray();
 
 function displayUstensil (ustensils) {
-  liUstensils.insertAdjacentHTML("beforeend", `<li>${ustensils}</li>`);
+  liUstensils.insertAdjacentHTML("beforeend", `<li class="li_tag">${ustensils}</li>`);
 }
 ustensilsArray.forEach((ustensil) => displayUstensil(ustensil));
 displayUstensil();
+
+
+//-------------------Algo de recherche bar de recherche-----------------//////////// 
+const searchBar = document.querySelector('.search_bar');
+
+searchBar.addEventListener("keyup", (e) => {
+  const searchLetter = e.target.value;
+  const card = document.querySelectorAll('.card_recipe');
+  filterElements(searchLetter, card);
+});
+
+
+function filterElements(lettres, recipesCard) {
+  if(lettres.length >2){
+    for (let i=0; i<recipesCard.length; i++){
+      if(recipesCard[i].textContent.toLowerCase().includes(lettres)) {
+        recipesCard[i].style.display = "block";
+      } else {
+        recipesCard[i].style.display = "none"
+      }
+    }
+  }
+};
