@@ -1,4 +1,3 @@
-console.log('lop');
 //activer les boutons de recherche
     let Btn_ingredients = document.querySelector (".onglet");
     let liAppareils = document.querySelector (".btn_appareil_li");
@@ -42,8 +41,7 @@ displayAppareil()
 function ustensilsListArray () {
   ustensilsArray = [];
   ustensilsArray = recipes.map((recipe) => recipe.ustensils).flat();
-  //ustensilsArray = ustensilsArray.map((ustensil) => ustensil.ustensils);
-  console.log(recipes);
+  
 }
 ustensilsListArray();
 
@@ -57,23 +55,40 @@ displayUstensil();
 //-------------------Algo1 de recherche bar de recherche-----------------//////////// 
 const searchBar = document.querySelector('.search_bar');
 
-searchBar.addEventListener("keyup", (e) => {
-  const searchLetter = e.target.value;
-  const card = document.querySelectorAll('.card_recipe');
-  filterElements(searchLetter, card);
-});
+// searchBar.addEventListener("keyup", (e) => {
+  //   const searchLetter = e.target.value;
+//  const card = document.querySelectorAll('.card_recipe');
+//   filterElements(searchLetter, card);
+// });
 
 
-function filterElements(lettres, recipesCard) {
-  if(lettres.length >2){
-    for (let i=0; i<recipesCard.length; i++){
-      if(recipesCard[i].textContent.toLowerCase().includes(lettres)) {
-        recipesCard[i].style.display = "block";
-      } else {
-        recipesCard[i].style.display = "none"
-      }
-    }
-  }
-};
-
+// function filterElements(lettres, recipesCard) {
+//   if(lettres.length >2){
+//     for (let i=0; i<recipesCard.length; i++){
+//       if(recipesCard[i].textContent.toLowerCase().includes(lettres)) {
+//         recipesCard[i].style.display = "block";
+//       } else {
+//         recipesCard[i].style.display = "none"
+//       }
+//     }
+//   }
+// };
+const ingregientsArray = []
+const ustensilArray = []
 //----------------------------------------Algo 2 pour la barre de recherche---------------------//
+searchBar.addEventListener('keyup', function(){
+  const recipeCards = document.querySelectorAll('.card_recipe');
+  const inputSearch = searchBar.value;
+  const resultResearch = recipes.filter(item => item.name.toLocaleLowerCase().includes(inputSearch.toLocaleLowerCase()));
+  
+  if (inputSearch.lenght >2) {
+      resultResearch.forEach(recipeCards )
+      recipeCards[item].style.display = "block";
+    } else {
+      //recipeCards.style.display = "none";
+    }
+console.log(inputSearch);
+console.log(resultResearch);
+
+  }
+)
