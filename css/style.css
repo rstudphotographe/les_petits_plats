@@ -169,7 +169,10 @@ article {
   width: 50%;
 }
 
-.li_tag {
+.li_tag,
+.ingredient_tag,
+.appareil_tag,
+.ustensil_tag {
   font-size: 16px;
 }
 

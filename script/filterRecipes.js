@@ -1,4 +1,3 @@
-console.log('lop');
 //activer les boutons de recherche
     let Btn_ingredients = document.querySelector (".onglet");
     let liAppareils = document.querySelector (".btn_appareil_li");
@@ -17,7 +16,7 @@ function ingredientsListArray() {
 ingredientsListArray();
 
 function displayIngredient(ingredients){
-  liIngredient.insertAdjacentHTML("beforeend",`<li class="li_tag">${ingredients}</li>`);
+  liIngredient.insertAdjacentHTML("beforeend",`<li class="ingredient_tag">${ingredients}</li>`);
 }
   ingredientsArray.forEach((ingredient) => displayIngredient(ingredient));
   displayIngredient()
@@ -32,7 +31,7 @@ function appareilsListArray() {
 appareilsListArray();
 
 function displayAppareil (appliance) {
-  liAppareils.insertAdjacentHTML("beforeend", `<li class="li_tag">${appliance}</li>`);
+  liAppareils.insertAdjacentHTML("beforeend", `<li class="appareil_tag">${appliance}</li>`);
 }
 appareilsArray.forEach((appliance) => displayAppareil(appliance));
 displayAppareil()
@@ -43,12 +42,12 @@ function ustensilsListArray () {
   ustensilsArray = [];
   ustensilsArray = recipes.map((recipe) => recipe.ustensils).flat();
   //ustensilsArray = ustensilsArray.map((ustensil) => ustensil.ustensils);
-  console.log(recipes);
+  
 }
 ustensilsListArray();
 
 function displayUstensil (ustensils) {
-  liUstensils.insertAdjacentHTML("beforeend", `<li class="li_tag">${ustensils}</li>`);
+  liUstensils.insertAdjacentHTML("beforeend", `<li class="ustensil_tag">${ustensils}</li>`);
 }
 ustensilsArray.forEach((ustensil) => displayUstensil(ustensil));
 displayUstensil();
@@ -75,3 +74,29 @@ function filterElements(lettres, recipesCard) {
     }
   }
 };
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//crée les tags t
+function displayTags(){
+  let displayTag = document.getElementById('tags')
+  displayTag.insertAdjacentHTML('beforeend', 
+  `<span class="btn_ingredient btn_result"> <img class="close" src="/assets/Vector.png" alt=""/></span>
+  <span  class="btn_appareil btn_result"> <img class="close" src="/assets/Vector.png" alt=""/></span>
+  <span  class="btn_ustensil btn_result"> <img class="close" src="/assets/Vector.png" alt=""/></span>`
+  )
+  displayTag.style.display = "none"
+};
+displayTags()
+
+//affiche l'ingredient qui sera cliqué dans le tag
+//const btnIngred = document.querySelectorAll('.ingredient_tag')
+document.addEventListener("click", function() {
+function displayTagIngredient(){
+    //displayTag.style.display = "block"
+  //const ingredientRecipe = document.querySelectorAll('.ingredient_tag')
+  `<span class="btn_ingredient btn_result"> ${e.textContent}<img class="close" src="/assets/Vector.png" alt=""/></span>`
+  displayTagIngredient()
+    }
+  
+}
+);
