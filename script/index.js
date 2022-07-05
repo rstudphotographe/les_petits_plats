@@ -5,7 +5,7 @@ function displayGalleryRecipe(recipe) {
   let contentHtml = document.getElementById("container_recipe").insertAdjacentHTML(
       "afterbegin",
       `   <div class="card_recipe">
-            <img src="/assets/pexels-daria-shevtsova-1070880.jpg" alt="">
+            <img class="img_recipe" src="/assets/pexels-daria-shevtsova-1070880.jpg" alt="">
             <div class="info_recipe">
                 <p class="recipe_name">${recipe.name}</p>
                 <div class="container_time">

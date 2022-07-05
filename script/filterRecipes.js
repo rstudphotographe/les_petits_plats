@@ -62,7 +62,6 @@ searchBar.addEventListener("keyup", (e) => {
   filterElements(searchLetter, card);
 });
 
-
 function filterElements(lettres, recipesCard) {
   if(lettres.length >2){
     for (let i=0; i<recipesCard.length; i++){
@@ -70,33 +69,47 @@ function filterElements(lettres, recipesCard) {
         recipesCard[i].style.display = "block";
       } else {
         recipesCard[i].style.display = "none"
+        //location.reload()
       }
     }
   }
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
-//crée les tags t
-function displayTags(){
-  let displayTag = document.getElementById('tags')
-  displayTag.insertAdjacentHTML('beforeend', 
-  `<span class="btn_ingredient btn_result"> <img class="close" src="/assets/Vector.png" alt=""/></span>
-  <span  class="btn_appareil btn_result"> <img class="close" src="/assets/Vector.png" alt=""/></span>
-  <span  class="btn_ustensil btn_result"> <img class="close" src="/assets/Vector.png" alt=""/></span>`
-  )
-  displayTag.style.display = "none"
-};
-displayTags()
+//crée les tags 
+// function displayTags(){
+//   let displayTags = document.getElementById('tags')
+//   displayTags.insertAdjacentHTML('beforeend', 
+//   `<span class="btn_ingredient btn_result"> <img class="close" src="/assets/Vector.png" alt=""/></span>
+//   <span  class="btn_appareil btn_result"> <img class="close" src="/assets/Vector.png" alt=""/></span>
+//   <span  class="btn_ustensil btn_result"> <img class="close" src="/assets/Vector.png" alt=""/></span>`
+//   )
+//   displayTags.style.display = "none"
+// };
+// displayTags()
 
 //affiche l'ingredient qui sera cliqué dans le tag
-//const btnIngred = document.querySelectorAll('.ingredient_tag')
-document.addEventListener("click", function() {
-function displayTagIngredient(){
-    //displayTag.style.display = "block"
-  //const ingredientRecipe = document.querySelectorAll('.ingredient_tag')
-  `<span class="btn_ingredient btn_result"> ${e.textContent}<img class="close" src="/assets/Vector.png" alt=""/></span>`
-  displayTagIngredient()
-    }
+// `<span class="btn_ingredient btn_result"> ${e.textContent}<img class="close" src="/assets/Vector.png" alt=""/></span>`
+// displayTag.style.display = "none"
+
+const liIngred = document.querySelectorAll('.ingredient_tag')
+const closeTag = document.querySelector('.close')
+//const displaytagIngred = document.querySelector('.btn_ingredient')
+document.addEventListener("click", () =>{
   
-}
-);
+  liIngred.forEach((elt)=> {
+  let displayTags = document.getElementById('tags')
+    
+    displayTags.insertAdjacentHTML('beforeend',
+    `<span class="btn_ingredient btn_result">${elt.textContent} <img class="close" src="/assets/Vector.png" alt=""/></span>`
+    )
+    displayTags.style.display = "block";
+    console.log(elt);
+  }
+  )
+});
+
+
+  
+  
+

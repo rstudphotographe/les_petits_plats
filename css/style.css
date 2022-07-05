@@ -20,43 +20,64 @@ body {
 
 .icon_search {
   position: absolute;
-  margin: -4% 78%;
+  margin: -3% 90%;
   font-size: 20px;
   color: #aaa8a8;
 }
 
 article {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   width: 40%;
+}
+
+::-moz-placeholder {
+  color: #fffafa;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+:-ms-input-placeholder {
+  color: #fffafa;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+::placeholder {
+  color: #fffafa;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .btn_result {
   margin: 20px 0;
   padding: 10px 15px;
   border-radius: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .btn_ingredient {
   background-color: #3282F7;
   color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .btn_appareil {
   background-color: #68D9A4;
   color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .btn_ustensil {
   background-color: #ED6454;
   color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .close {
@@ -65,12 +86,8 @@ article {
 
 .container_onglet {
   margin: 67px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  align-items: baseline;
 }
 
 .ingredient {
@@ -81,10 +98,12 @@ article {
   padding: 20px;
   margin: 15px;
   width: 50%;
+  cursor: pointer;
 }
 
 .ingredient:hover {
   width: 550px;
+  border: none;
 }
 
 .btn_ingredient_li {
@@ -92,10 +111,8 @@ article {
 }
 
 #menu_ingredient:hover .btn_ingredient_li {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   background-color: #3282F7;
   color: white;
@@ -110,10 +127,8 @@ article {
 }
 
 #menu_appareil:hover .btn_appareil_li {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   background-color: #68D9A4;
   color: white;
@@ -128,10 +143,8 @@ article {
 }
 
 #menu_ustensil:hover .btn_ustensil_li {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   background-color: #ED6454;
   color: white;
@@ -173,7 +186,8 @@ article {
 .ingredient_tag,
 .appareil_tag,
 .ustensil_tag {
-  font-size: 16px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 input {
@@ -187,16 +201,14 @@ input {
 }
 
 #container_recipe {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   margin-top: 50px;
   height: 850px;
 }
 
-img {
+.img_recipe {
   width: 100%;
 }
 
@@ -209,27 +221,15 @@ img {
 }
 
 .info_recipe {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .liste_ingredient {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  justify-content: space-between;
+  align-items: baseline;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -256,8 +256,6 @@ li {
 
 .listing {
   font-size: 12px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -276,5 +274,4 @@ li {
   font-size: 12px;
   width: 20%;
   margin: 40px;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

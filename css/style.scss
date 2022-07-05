@@ -24,7 +24,7 @@ body {
   }
   .icon_search {
     position: absolute;
-    margin: -4% 78%;
+    margin: -3% 90%;
     font-size: 20px;
     color: #aaa8a8;
   }
@@ -34,6 +34,12 @@ body {
     justify-content: space-between;
     width: 40%;
   }
+  ::placeholder{
+    color: #fffafa;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
 .btn_result {
   margin: 20px 0;
   padding: 10px 15px;
@@ -43,16 +49,22 @@ body {
   .btn_ingredient {
     background-color: #3282F7;
     color: white;
+    width: fit-content;
+
   }
 
   .btn_appareil {
     background-color: #68D9A4;
     color: white;
+    width: fit-content;
+
   }
 
   .btn_ustensil {
     background-color: #ED6454;
     color: white;
+    width: fit-content;
+
   }
 
   .close {
@@ -76,10 +88,12 @@ body {
     padding: 20px;
     margin: 15px;
     width: 50%;
+    cursor: pointer;
   } 
   
   .ingredient:hover{
     width: 550px;
+    border: none;
   }
   .btn_ingredient_li{
     display: none;
@@ -158,7 +172,8 @@ body {
 .ingredient_tag,
 .appareil_tag,
 .ustensil_tag {
-  font-size: 16px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 input{
@@ -189,7 +204,7 @@ input{
     height: 850px;
   }
 
-  img {
+  .img_recipe {
       width: 100%;
   }
 
