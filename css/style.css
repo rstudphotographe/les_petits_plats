@@ -25,10 +25,8 @@ body {
   color: #aaa8a8;
 }
 
-article {
+#tags {
   display: flex;
-  justify-content: space-between;
-  width: 40%;
 }
 
 ::-moz-placeholder {
@@ -50,7 +48,7 @@ article {
 }
 
 .btn_result {
-  margin: 20px 0;
+  margin: 20px 12px;
   padding: 10px 15px;
   border-radius: 5px;
   display: flex;

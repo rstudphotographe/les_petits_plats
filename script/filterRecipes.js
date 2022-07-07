@@ -91,19 +91,15 @@ function filterElements(lettres, recipesCard) {
 //  };
 //displayTags()
 
-const displayTags = document.querySelector(".btn");
-const btnResult = document.querySelector(".btn_result");
 
 //fonction qui ferme le tag
 function tagNone(el) {
-  //el.stopImmediatePropagation();
   el.style.display ='none'
-  //displayTags.style.display = "none";
 };
 
 //fonction au clic qui va afficher l'élément choisi dans le tag
-const liIngred = document.querySelectorAll(".ingredient_tag");
 liIngredient.addEventListener("click", () => {
+  const liIngred = document.querySelectorAll(".ingredient_tag");
   liIngred.forEach((ingredient) => {
     let displayTags = document.getElementById("tags");
 
@@ -112,7 +108,7 @@ liIngredient.addEventListener("click", () => {
     `<span onclick="tagNone(this)" class="btn_ingredient btn_result">${ingredient.textContent} <img class="close" src="/assets/Vector.png" alt=""/></span>`
 
     );
-    displayTags.style.display = "block";
+    displayTags.target.style.display = "block";
   });
  
 });
@@ -126,12 +122,12 @@ liAppareils.addEventListener("click", () => {
       "beforeend",
       `<span onclick="tagNone(this)" class="btn_appareil btn_result">${appareil.textContent} <img class="close" src="/assets/Vector.png" alt=""/></span>`
     );
-    displayTags.style.display = "block";
+    displayTags.target.style.display = "block";
   });
 });
 
 //Ecoute le clic sur chaque ustensil
-document.addEventListener("click", () => {
+liUstensils.addEventListener("click", () => {
   const liUstens = document.querySelectorAll(".ustensil_tag");
   liUstens.forEach((ustensil) => {
     let displayTags = document.getElementById("tags");
@@ -140,6 +136,6 @@ document.addEventListener("click", () => {
       "beforeend",
       `<span onclick="tagNone(this)" class="btn_ustensil btn_result">${ustensil.textContent} <img class="close" src="/assets/Vector.png" alt=""/></span>`
     );
-    displayTags.style.display = "block";
+    displayTags.target.style.display = "block";
   });
 });
