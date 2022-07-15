@@ -1,30 +1,33 @@
 //activer les boutons de recherche
 let Btn_ingredients = document.querySelector(".onglet");
-let liAppareils = document.querySelector(".btn_appareil_li");
-let liUstensils = document.querySelector(".btn_ustensil_li");
-let liIngredient = document.querySelector(".btn_ingredient_li");
+let ulAppareils = document.querySelector(".btn_appareil_li");
+let ulUstensils = document.querySelector(".btn_ustensil_li");
+let ulIngredient = document.querySelector(".btn_ingredient_li");
+let liIngredients;
+
 let btnSearch = document.querySelectorAll(".search");
+let containerRecipe = document.querySelector('.container_recipe')
 
 // ajout des ingredients dans l'onglet ingredients pour la recherche
+let ingredientArray = [];
 function ingredientsListArray() {
-  ingredientsArray = [];
   ingredientsArray = recipes.map((recipe) => recipe.ingredients).flat();
   ingredientsArray = ingredientsArray.map(
     (ingredient) => ingredient.ingredient
-  );
-}
-ingredientsListArray();
-
-function displayIngredient(ingredients) {
-  liIngredient.insertAdjacentHTML(
+    );
+  }
+  ingredientsListArray();
+  // recipes.map(recipe => recipe.ingredients.map( ing => console.log(ing.ingredient)));
+  // recipes.map(recipe => console.log(recipe.ingredients.flat()))
+function displayIngredient(ingredient) {
+  ulIngredient.insertAdjacentHTML(
     "beforeend",
-    `<li class="ingredient_tag">${ingredients}</li>`
+    `<li class="ingredient_tag">${ingredient}</li>`
   );
 }
-ingredientsArray.forEach((ingredient) => displayIngredient(ingredient));
-displayIngredient();
 
 // ////////////////////////////////////de même pour le tableau des APPAREILS////////////////////////////////////////
+let appareilsArray = [];
 function appareilsListArray() {
   appareilsArray = [];
   appareilsArray = recipes.map((recipes) => recipes.appliance).flat();
@@ -32,7 +35,7 @@ function appareilsListArray() {
 appareilsListArray();
 
 function displayAppareil(appliance) {
-  liAppareils.insertAdjacentHTML(
+  ulAppareils.insertAdjacentHTML(
     "beforeend",
     `<li class="appareil_tag">${appliance}</li>`
   );
@@ -41,6 +44,7 @@ appareilsArray.forEach((appliance) => displayAppareil(appliance));
 displayAppareil();
 
 //-------------------------------De meme pour les USTENSILS//----------------------------//
+let ustensilsArray = [];
 function ustensilsListArray() {
   ustensilsArray = [];
   ustensilsArray = recipes.map((recipe) => recipe.ustensils).flat();
@@ -48,10 +52,10 @@ function ustensilsListArray() {
 ustensilsListArray();
 
 function displayUstensil(ustensils) {
-  liUstensils.insertAdjacentHTML(
+  ulUstensils.insertAdjacentHTML(
     "beforeend",
     `<li class="ustensil_tag">${ustensils}</li>`
-  );
+    );
 }
 ustensilsArray.forEach((ustensil) => displayUstensil(ustensil));
 displayUstensil();
@@ -70,26 +74,14 @@ function filterElements(lettres, recipesCard) {
     for (let i = 0; i < recipesCard.length; i++) {
       if (recipesCard[i].textContent.toLowerCase().includes(lettres)) {
         recipesCard[i].style.display = "block";
-      } else {
+      } else  {
         recipesCard[i].style.display = "none";
+        //window.location.reload()
         //location.reload()
       }
     }
   }
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////////////
-// //crée les tags
-//  function displayTags(){
-//    let displayTags = document.getElementById('tags')
-//    displayTags.insertAdjacentHTML('beforeend',
-//    `<span class="btn_ingredient btn_result"> <img class="close" src="/assets/Vector.png" alt=""/></span>
-//    <span  class="btn_appareil btn_result"> <img class="close" src="/assets/Vector.png" alt=""/></span>
-//    <span  class="btn_ustensil btn_result"> <img class="close" src="/assets/Vector.png" alt=""/></span>`
-//    )
-//    displayTags.style.display = "none"
-//  };
-//displayTags()
+};
 
 
 //fonction qui ferme le tag
@@ -97,45 +89,40 @@ function tagNone(el) {
   el.style.display ='none'
 };
 
-//fonction au clic qui va afficher l'élément choisi dans le tag
-liIngredient.addEventListener("click", () => {
-  const liIngred = document.querySelectorAll(".ingredient_tag");
-  liIngred.forEach((ingredient) => {
-    let displayTags = document.getElementById("tags");
-
-    displayTags.insertAdjacentHTML(
-      "beforeend",
-    `<span onclick="tagNone(this)" class="btn_ingredient btn_result">${ingredient.textContent} <img class="close" src="/assets/Vector.png" alt=""/></span>`
-
+/************creer le tag**************************************************************/
+ingredientsArray.forEach((ingredient) => displayIngredient(ingredient));
+liIngredients = document.querySelectorAll(".ingredient_tag");
+liIngredients.forEach(liIngredient => liIngredient.addEventListener('click', e =>  createIngredientsTag(e)));
+function createIngredientsTag(e) {
+  let displayTags = document.getElementById("tags");
+     displayTags.insertAdjacentHTML("beforeend",
+     `<span onclick="tagNone(this)" class="btn_ingredient btn_result">${e.target.textContent} <img class="close" src="/assets/Vector.png" alt=""/></span>`
     );
-    displayTags.target.style.display = "block";
-  });
- 
-});
+  
+}
 
-liAppareils.addEventListener("click", () => {
-  const liAppar = document.querySelectorAll(".appareil_tag");
-  liAppar.forEach((appareil) => {
-    let displayTags = document.getElementById("tags");
+appareilsArray.forEach((appareil) => displayAppareil(appareil));
+liAppareils = document.querySelectorAll(".appareil_tag");
+   liAppareils.forEach(liAppareil => liAppareil.addEventListener('click', ele => createAppareilsTag(ele)));
+   function createAppareilsTag(ele){
+     let displayTags = document.getElementById("tags");
 
-    displayTags.insertAdjacentHTML(
-      "beforeend",
-      `<span onclick="tagNone(this)" class="btn_appareil btn_result">${appareil.textContent} <img class="close" src="/assets/Vector.png" alt=""/></span>`
-    );
-    displayTags.target.style.display = "block";
-  });
-});
+     displayTags.insertAdjacentHTML(
+       "beforeend",
+       `<span onclick="tagNone(this)" class="btn_appareil btn_result">${ele.target.textContent} <img class="close" src="/assets/Vector.png" alt=""/></span>`
+     );
+     
+ };
 
-//Ecoute le clic sur chaque ustensil
-liUstensils.addEventListener("click", () => {
-  const liUstens = document.querySelectorAll(".ustensil_tag");
-  liUstens.forEach((ustensil) => {
-    let displayTags = document.getElementById("tags");
+ ustensilsArray.forEach((ustensil) => displayUstensil(ustensil));
+liUstensils = document.querySelectorAll(".ustensil_tag");
+   liUstensils.forEach(liUstensil => liUstensil.addEventListener('click', ele => createUstensilsTag(ele)));
+   function createUstensilsTag(ele){
+     let displayTags = document.getElementById("tags");
 
-    displayTags.insertAdjacentHTML(
-      "beforeend",
-      `<span onclick="tagNone(this)" class="btn_ustensil btn_result">${ustensil.textContent} <img class="close" src="/assets/Vector.png" alt=""/></span>`
-    );
-    displayTags.target.style.display = "block";
-  });
-});
+     displayTags.insertAdjacentHTML(
+       "beforeend",
+       `<span onclick="tagNone(this)" class="btn_appareil btn_result">${ele.target.textContent} <img class="close" src="/assets/Vector.png" alt=""/></span>`
+     );
+     
+ };

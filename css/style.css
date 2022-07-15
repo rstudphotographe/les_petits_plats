@@ -219,10 +219,15 @@ input {
   width: 380px;
 }
 
+.recipe_name {
+  margin: 5px -60px;
+  font-size: 17px;
+  width: 100%;
+}
+
 .info_recipe {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  margin: 0 64px;
 }
 
 .liste_ingredient {
@@ -251,6 +256,12 @@ li {
 
 .time {
   font-size: 15px;
+}
+
+.container_time {
+  display: flex;
+  position: absolute;
+  margin: -25px 105px;
 }
 
 .listing {
