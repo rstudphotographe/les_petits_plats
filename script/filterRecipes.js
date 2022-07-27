@@ -35,7 +35,7 @@ function appareilsListArray() {
   appareilsArray = recipes.map((recipes) => recipes.appliance).flat();
 }
 appareilsListArray();
-let newAppareilsArray = [...new Set(appareilsArray)];//evite le dedoublement
+let newAppareilsArray = [...new Set(appareilsArray)]; //evite le dedoublement
 
 function displayAppareil(appliance) {
   ulAppareils.insertAdjacentHTML(
@@ -49,7 +49,7 @@ function ustensilsListArray() {
   ustensilsArray = recipes.map((recipe) => recipe.ustensils).flat();
 }
 ustensilsListArray();
-let newUstensilsArray = [...new Set(ustensilsArray)];//evite le dedoublement
+let newUstensilsArray = [...new Set(ustensilsArray)]; //evite le dedoublement
 
 function displayUstensil(ustensils) {
   ulUstensils.insertAdjacentHTML(
@@ -87,7 +87,7 @@ function tagNone(el) {
 }
 
 /****************************************************creer le tag**************************************************************/
-
+let arrayResult = [];
 newIngredientArray.forEach((ingredient) => displayIngredient(ingredient));
 liIngredients = document.querySelectorAll(".ingredient_tag");
 liIngredients.forEach((liIngredient) =>
@@ -99,7 +99,21 @@ function createIngredientsTag(e) {
     "beforeend",
     `<span onclick="tagNone(this)" class="btn_ingredient btn_result">${e.target.textContent} <img class="close" src="/assets/Vector.png" alt=""/></span>`
   );
+  //afficher les cartes selon le tag
+  // const resultTag = recipes.filter(recipes.includes(e.target.textContent))
+  arrayResult.push(e.target.textContent);
+
+  const tagIngredient = recipes
+    .map((ele) => ele.ingredients)
+    .map((x) => x.map((y) => y.ingredient));
+  console.log(tagIngredient);
+  // console.log(tagIngredient);
+  //   console.log(tagIngredient.map(x => x.ingredients).map(e => e.ingredient));
+  //  let newTag = tagIngredient.map(ele => ele.ingredient)
+  //  console.log(newTag);
 }
+
+/*****************************************************************************Ecoute chaque appareil**************************** */
 
 newAppareilsArray.forEach((appareil) => displayAppareil(appareil));
 liAppareils = document.querySelectorAll(".appareil_tag");
@@ -113,8 +127,12 @@ function createAppareilsTag(ele) {
     "beforeend",
     `<span onclick="tagNone(this)" class="btn_appareil btn_result">${ele.target.textContent} <img class="close" src="/assets/Vector.png" alt=""/></span>`
   );
+  const tagAppliance = recipes
+    .map((ele) => ele.appliance)
+    console.log(tagAppliance);
 }
 
+/*****************************************************************************Ecoute chaque ustensil**************************** */
 newUstensilsArray.forEach((ustensil) => displayUstensil(ustensil));
 liUstensils = document.querySelectorAll(".ustensil_tag");
 liUstensils.forEach((liUstensil) =>
@@ -127,4 +145,8 @@ function createUstensilsTag(ele) {
     "beforeend",
     `<span onclick="tagNone(this)" class="btn_ustensil btn_result">${ele.target.textContent} <img class="close" src="/assets/Vector.png" alt=""/></span>`
   );
+  const tagUstensil = recipes
+    .map((ele) => ele.ustensils)
+    //.map((x) => x.map((y) => y.ingredient));
+    console.log(tagUstensil);
 }
